@@ -95,7 +95,35 @@ class RandomObject(object):
                 return df.sort_index()
 #----------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------
-
+def calculate_bayes(prob_a,sensitivity,specificity,b=True):
+    '''Calculates the Bayes algorithm for an event A and a test B
+    prob_a: float between 0 and 1 that represents the probability of event A
+    sensitivity: probability of B given that A occurred
+    specificity: probability of not B given that not A occured
+    '''
+    
+    # Calculating the complements of the information we know
+    prob_nota = 1-prob_a
+    prob_notb_a = 1-sensitivity # probability of not B given A
+    prob_b_nota = 1-specificity # probability of B given not A
+    
+    # If the test is B:
+    if b:
+        prob_a_join_b = prob_a*sensitivity
+        prob_nota_join_b = prob_nota*prob_b_nota
+        prob_b = prob_a_join_b+prob_nota_join_b
+        prob_a_b = prob_a_join_b/prob_b       #probability of A given B
+        prob_nota_b = prob_nota_join_b/prob_b #probability of not A given B
+        return (prob_a_b,prob_nota_b)
+    
+    # If the test is not B:
+    else:
+        prob_a_join_notb = prob_a*prob_notb_a
+        prob_nota_join_notb = prob_not_a*specificity
+        prob_notb = prob_a_join_notb+prob_nota_join_notb
+        prob_a_notb = prob_a_join_notb/prob_notb       # probability of A given not B
+        prob_nota_notb = prob_nota_join_notb/prob_notb #probability of not A given not B
+        return (prob_a_notb,prob_nota_notb)
 
 
 
