@@ -1,6 +1,7 @@
 #-------------------------------- Gaussian Class -------------------------------
 import math
 import matplotlib.pyplot as plt
+from .Generaldistribution import Distribution
 import numpy as np
 
 class Gaussian(Distribution):
@@ -15,7 +16,7 @@ class Gaussian(Distribution):
     """
     def __init__(self, mu = 0, sigma = 1):
         
-        Distribution.__init__(self,my,sigma)
+        Distribution.__init__(self,mu,sigma)
 
 
     
@@ -90,8 +91,7 @@ class Gaussian(Distribution):
         return (1/(self.stdev*np.sqrt(2*np.pi)))*np.exp(-0.5*((x-self.mean)\
                                                              /self.stdev)**2)
         # TODO: Calculate the probability density function of the Gaussian distribution
-        #       at the value x. You'll need to use self.stdev and self.mean to do the calculation
-        pass        
+        #       at the value x. You'll need to use self.stdev and self.mean to do the calculation       
 
     def plot_histogram_pdf(self, n_spaces = 50):
 
@@ -108,9 +108,6 @@ class Gaussian(Distribution):
         """
         
         #TODO: Nothing to do for this method. Try it out and see how it works.
-        
-        mu = self.mean
-        sigma = self.stdev
 
         min_range = min(self.data)
         max_range = max(self.data)
@@ -165,3 +162,4 @@ class Gaussian(Distribution):
             string: characteristic of the Gaussian
         '''
         return 'Mean {}, Standard Deviation {}'.format(self.mean,self.stdev)
+
