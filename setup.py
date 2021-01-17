@@ -1,7 +1,7 @@
 from setuptools import setup
 
-setup(name='my_probability',
+setup(name='probadg',
       version = '0.1',
       description = 'Binomial and Gaussian objects',
-      packages = ['my_probability'],
+      packages = ['probadg'],
       zip_safe = False)
