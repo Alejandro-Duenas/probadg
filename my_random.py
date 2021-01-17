@@ -119,7 +119,7 @@ def calculate_bayes(prob_a,sensitivity,specificity,b=True):
     # If the test is not B:
     else:
         prob_a_join_notb = prob_a*prob_notb_a
-        prob_nota_join_notb = prob_not_a*specificity
+        prob_nota_join_notb = prob_nota*specificity
         prob_notb = prob_a_join_notb+prob_nota_join_notb
         prob_a_notb = prob_a_join_notb/prob_notb       # probability of A given not B
         prob_nota_notb = prob_nota_join_notb/prob_notb #probability of not A given not B
