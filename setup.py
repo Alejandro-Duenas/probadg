@@ -9,7 +9,7 @@ setup(name='probadg',
       long_description = long_description,
       long_description_content_type = 'text/markdown',
       description = 'Binomial and Gaussian objects',
-      url = "https://github.com/Alejandro-Duenas/probadg"
+      url = "https://github.com/Alejandro-Duenas/probadg",
       packages = setuptools.find_packages(),
       classifiers=[
         "Programming Language :: Python :: 3",

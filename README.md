@@ -29,3 +29,4 @@ This software is licensed under the [MIT](https://opensource.org/licenses/MIT) l
 This package was done under the guidance of [Udacity](udacity.com) Data Science Nano Degree. 
 
 Also, I would like to thank the free online education platforms [Coursera](https://www.coursera.org) and [Edx](https://www.edx.org), which helped me to get started in this path.  
+
